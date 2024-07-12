@@ -22,4 +22,8 @@ if (app.Environment.IsDevelopment())
 }
 
 
+app.MapGet("users", async (MyDbContext context, CancellationToken token)
+    => await context.Users.ToListAsync(token));
+
+
 app.Run();
